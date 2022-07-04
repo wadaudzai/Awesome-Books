@@ -1,4 +1,5 @@
-const books = [];
+let books = [];
+if (localStorage.books) books = JSON.parse(localStorage.getItem('books'));
 
 class Book {
     constructor(title, author) {
@@ -6,11 +7,14 @@ class Book {
         this.author = author;
     }
 }
+
 const removeBook = (event) => {
     const indexBook = event.currentTarget.dataset.index;
     books.splice(parseInt(indexBook),1);
     refreshBookList();
+    localStorage.setItem('books', JSON.stringify(books));
 }
+
 const refreshBookList = () => {
     const booksSection = document.getElementById('books-section');
     let listItems = "";
@@ -39,6 +43,7 @@ const addBook = () => {
     book.author = authorInput.value;
     books.push(book);
     refreshBookList();
+    localStorage.setItem('books', JSON.stringify(books));
 }
 
 const titleInput = document.getElementById('title');
