@@ -10,6 +10,7 @@ const refreshBookList = () => {
                     <p>${books[i].title}</p>
                     <p>${books[i].author}</p>
                     <button type="button" class="remove" data-index = "${i}">Remove</button>
+                    <hr>
         </li>
         `;
 
