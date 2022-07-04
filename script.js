@@ -6,7 +6,11 @@ class Book {
         this.author = author;
     }
 }
-
+const removeBook = (event) => {
+    const indexBook = event.currentTarget.dataset.index;
+    books.splice(parseInt(indexBook),1);
+    refreshBookList();
+}
 const refreshBookList = () => {
     const booksSection = document.getElementById('books-section');
     let listItems = "";
@@ -15,7 +19,7 @@ const refreshBookList = () => {
         <li>
                     <p>${books[i].title}</p>
                     <p>${books[i].author}</p>
-                    <button type="button">Remove</button>
+                    <button type="button" class="remove" data-index = "${i}">Remove</button>
         </li>
         `;
 
@@ -24,6 +28,8 @@ const refreshBookList = () => {
     });
 
     booksSection.innerHTML = listItems;
+    document.querySelectorAll('.remove').forEach((element) => 
+    element.addEventListener('click', removeBook));
 }
 refreshBookList();
 
@@ -40,3 +46,7 @@ const authorInput = document.getElementById('author');
 const addButton = document.getElementById('submit');
 
 addButton.addEventListener('click', addBook);
+
+// remove button 
+
+
