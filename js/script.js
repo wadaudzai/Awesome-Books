@@ -33,18 +33,18 @@ class Booklist {
 
   addBook() {
     const book = new Book(titleInput.value, authorInput.value);
-    booklist.books.push(book);
-    booklist.refreshBookList();
-    localStorage.setItem('books', JSON.stringify(booklist.books));
+    this.books.push(book);
+    this.refreshBookList();
+    localStorage.setItem('books', JSON.stringify(this.books));
     titleInput.value = '';
     authorInput.value = '';
   }
 
   removeButton(event) {
     const indexBook = event.currentTarget.dataset.index;
-    booklist.books.splice(parseInt(indexBook, 10), 1);
-    booklist.refreshBookList();
-    localStorage.setItem('books', JSON.stringify(booklist.books));
+    this.books.splice(parseInt(indexBook, 10), 1);
+    this.refreshBookList();
+    localStorage.setItem('books', JSON.stringify(this.books));
   }
 }
 
