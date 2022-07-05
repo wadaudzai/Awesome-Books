@@ -23,32 +23,33 @@ class Booklist {
     this.books.forEach((element, i) => {
       const book = `<li class="single-book">
                                  <p>"${this.books[i].title}" by ${this.books[i].author}</p>
-                                 <button type="button" class="remove" data-index = "${i}" onclick="removeButton(event)">Remove</button>
+                                 <button type="button" class="remove" data-index = "${i}" onclick="booklist.removeButton(event)">Remove</button>
                     </li>`;
       listItems += book;
     });
 
     booksSection.innerHTML = listItems;
   }
+
+  addBook() {
+    const book = new Book(titleInput.value, authorInput.value);
+    booklist.books.push(book);
+    booklist.refreshBookList();
+    localStorage.setItem('books', JSON.stringify(booklist.books));
+    titleInput.value = '';
+    authorInput.value = '';
+  }
+
+  removeButton(event) {
+    const indexBook = event.currentTarget.dataset.index;
+    booklist.books.splice(parseInt(indexBook, 10), 1);
+    booklist.refreshBookList();
+    localStorage.setItem('books', JSON.stringify(booklist.books));
+  }
 }
 
 const booklist = new Booklist();
 booklist.refreshBookList();
-
-function addBook() {
-  const book = new Book(titleInput.value, authorInput.value);
-  booklist.books.push(book);
-  booklist.refreshBookList();
-  localStorage.setItem('books', JSON.stringify(booklist.books));
-  titleInput.value = '';
-  authorInput.value = '';
-}
-
-function removeButton(event) {
-  const indexBook = event.currentTarget.dataset.index;
-  booklist.books.splice(parseInt(indexBook, 10), 1);
-  booklist.refreshBookList();
-  localStorage.setItem('books', JSON.stringify(booklist.books));
-}
-
-addButton.addEventListener('click', addBook);
+addButton.addEventListener('click', () => {
+  booklist.addBook();
+});
