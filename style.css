@@ -1,14 +1,10 @@
 ul {
   list-style: none;
-  border: 2px solid ;
+  border: 2px solid;
 }
 
 .books-section {
   padding: 1px;
-}
-
-.single-book:nth-child(odd) {
-    background-color: #d3d3d3;
 }
 
 .single-book {
@@ -17,7 +13,11 @@ ul {
   padding: 5px;
 }
 
-.single-book p{
+.single-book:nth-child(odd) {
+  background-color: #d3d3d3;
+}
+
+.single-book p {
   font-weight: 600;
   font-family: sans-serif;
   font-size: 2vw;
@@ -53,7 +53,6 @@ form input {
   padding: 5px;
   margin: 5px;
   font-weight: 600;
-  
 }
 
 form button {
@@ -66,8 +65,8 @@ form button {
   color: #000;
 }
 
-h1, h2 {
-    font-family: sans-serif;
-    font-weight: 600;
+h1,
+h2 {
+  font-family: sans-serif;
+  font-weight: 600;
 }
-
