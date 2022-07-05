@@ -1,3 +1,78 @@
 ul {
   list-style: none;
+  border: 2px solid;
+}
+
+body {
+  text-align: center;
+}
+
+.books-section {
+  padding: 1px;
+  max-width: 768px;
+  margin: 1em auto;
+}
+
+.single-book {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.single-book:nth-child(odd) {
+  background-color: #d3d3d3;
+}
+
+.single-book p {
+  font-weight: 600;
+  font-family: sans-serif;
+  font-size: 2vw;
+}
+
+.remove {
+  border-width: 4px;
+  font-weight: 600;
+  font-size: 2vw;
+  background-color: #fff;
+}
+
+.black-bar {
+  display: block;
+  width: 25%;
+  height: 3px;
+  background-color: #000;
+}
+
+.add-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  border: 2px solid;
+  padding: 5px;
+  margin: 5px;
+  font-weight: 600;
+}
+
+form button {
+  border: 2px solid;
+  font-weight: 600;
+  align-self: flex-end;
+}
+
+::placeholder {
+  color: #000;
+}
+
+h1,
+h2 {
+  font-family: sans-serif;
+  font-weight: 600;
 }
