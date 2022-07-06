@@ -1,4 +1,33 @@
-ul {
+.top-nav {
+  border: 2px solid;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-nav-ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 1rem;
+  align-items: center;
+}
+
+.top-nav-ul a {
+  text-decoration: none;
+  color: #000;
+}
+
+.top-nav > p {
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+time {
+  display: block;
+  text-align: end;
+}
+
+.books-section {
   list-style: none;
   border: 2px solid;
 }
@@ -74,5 +103,34 @@ form button {
 h1,
 h2 {
   font-family: sans-serif;
+  font-weight: 600;
+}
+
+.vertical-bar {
+  display: block;
+  height: 1.2rem;
+  width: 2px;
+  background-color: #000;
+}
+
+.info-div {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-info-ul {
+  text-align: start;
+}
+
+footer {
+  border: 2px solid;
+  text-align: start;
+  padding-left: 1rem;
+}
+
+footer > p {
   font-weight: 600;
 }
