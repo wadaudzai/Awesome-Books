@@ -48,6 +48,25 @@ class Booklist {
   }
 }
 
+const sections = {
+  booklist: document.getElementById('booklist'),
+  addbook: document.getElementById('addbook'),
+  contact: document.getElementById('contact'),
+};
+
+const switchSection = (event) => {
+  const target = event.currentTarget.dataset.target;
+  Object.keys(sections).forEach((key) => {
+    if (key === target) sections[key].classList.add('active');
+    else sections[key].classList.remove('active');
+  });
+};
+
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach((element) => {
+  element.addEventListener('click', switchSection);
+});
+
 const booklist = new Booklist();
 booklist.refreshBookList();
 addButton.addEventListener('click', () => {
