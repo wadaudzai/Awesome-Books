@@ -7,7 +7,7 @@
 2. style.css
 3. script.js
 
-This project was built to display a form that had two inputs. Which consists of the Title and the Author's input. Whenever you type in the title and the author name and click the add button. A new li will be created in order to show the information that you just added to the inputs and that information will be added to local storage as well. and can be removed using the remove button.
+This project was built to display a form that had two inputs. Which consists of the Title and the Author's input. Whenever you type in the title and the author name and click the add button. A new li will be created in order to show the information that you just added to the inputs and that information will be added to local storage as well. and can be removed using the remove button. Another functionality that is added to this app is that it has a navbar which has links to all the section of the page and when you click on one link the other sections are removed and you can work on that one section and also change the sections by clicking the link.
 
 ## Built With
 
